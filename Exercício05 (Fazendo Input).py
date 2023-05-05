@@ -8,3 +8,7 @@ x = float(input('digite o número'))
 
 sal = int(input('Salário= '))
 print("O salário digitado foi %d"%sal)
+#int = %d
+#str = %s
+#float = %f
+#bool = %b
