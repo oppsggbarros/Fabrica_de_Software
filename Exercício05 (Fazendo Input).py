@@ -1,0 +1,1 @@
+x = input(str("Digite seu nome\n"))
