@@ -5,7 +5,7 @@ while True:
     os.system("cls")
     if a =="1":
         name = input("Informe seu nome: ")
-        sobrenome = input("Informe seu sobrenome:")
+        sobrenome = input("Informe seu sobrenome: ")
         while True:
             try:
                 rg = int(input("Informe seu RG: "))
@@ -18,6 +18,7 @@ while True:
             else:
                 break
         endereço = input("Informe seu Endereço: ")
+        print("Cadastro efetuado!")
 
         os.system("pause")
         os.system("cls")
@@ -34,6 +35,7 @@ while True:
                 break
         horario = input("Informe as horas de voo: ")
         cor = input("Qual a cor do Avião: ")
+        print("Cadastro efetuado!")
         os.system("pause")
         os.system("cls")
     elif a =="3":
@@ -48,6 +50,7 @@ while True:
                 continue
             else:
                 break
+        print("Cadastro efetuado!")
         os.system("pause")
         os.system("cls")
     elif a == "4":
@@ -62,6 +65,7 @@ while True:
                 continue
             else:
                 break
+        print("Cadastro efetuado!")
         os.system("pause")
         os.system("cls")
     elif a == "5":
@@ -74,6 +78,7 @@ while True:
                 continue
             else:
                 break
+        
         if e == "1":
             try:
                 print(modelo)
