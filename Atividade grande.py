@@ -65,29 +65,67 @@ while True:
         os.system("pause")
         os.system("cls")
     elif a == "5":
-        try:
-            print(name)
-            print(sobrenome)
-            print(rg)
-            print(cpf)
-            print(endereço)
-            print(fone)
-            print(idade)
-            print(destino)
-            print(origem)
-            print(duração)
-            print(valor)
-            print(modelo)
-            print(ano)
-            print(horario)
-            print(cor)
-            print(qntd)
-            print(nometrip)
-            print(idadetrip)
-            print(fonetrip)
-        except NameError:
-            print("Faça o cadastros primeiro!")
-        os.system("pause")
-        os.system("cls")
-    elif a == "0":
-        break
+        while True: 
+            try:
+                print("Escolha qual dos cadastros você quer ler")
+                e = input("1- Relatório do Avião\n2- Relatório de Passagem\n3- Relatório da Tripulação\n4- Relatório do Passageiro\n")
+            except ValueError:
+                print("Digite Somente número")
+                continue
+            else:
+                break
+        if e == "1":
+            try:
+                print(modelo)
+                print(ano)
+                print(horario)
+                print(cor)
+                print(qntd)
+            except:
+                print("Faça o cadastro do Avião para acessar esta função!!!")
+                os.system("pause")
+                os.system("cls")
+                continue
+            else:
+                break
+        if e == "2":
+            try:
+                print(destino)
+                print(origem)
+                print(duração)
+                print(valor)
+            except NameError:
+                print("Faça o cadastro da Passagem para acessar essa função")
+                os.system("pause")
+                os.system("cls")
+                continue
+            else:
+                break
+        if e == "3":
+            try:
+                print(nometrip)
+                print(idadetrip)
+                print(fonetrip)
+            except NameError:
+                print("Faça o Cadastro da Tripulação para acessar esta função")
+                os.system("pause")
+                os.system("cls")
+                continue
+            else:
+                break
+        if e == "4":
+            try:
+                print(name)
+                print(sobrenome)
+                print(rg)
+                print(cpf)
+                print(endereço)
+                print(fone)
+                print(idade)
+            except NameError:
+                print("Faça o Cadastro do Usuário para acessar esta função")
+                os.system("pause")
+                os.system("cls")
+                continue
+            else:
+                break
