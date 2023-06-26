@@ -32,6 +32,7 @@ import secrets
 
 random = secrets.randbelow(100)
 print("\n", random)
+random_bits = secrets.randbits(8)
 token = secrets.token_bytes(32)
 print("\n", token)
 token_hex = secrets.token_hex(16)
