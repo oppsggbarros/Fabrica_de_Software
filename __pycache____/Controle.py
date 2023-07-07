@@ -6,7 +6,9 @@ class Controle:
 
     def aumentar_volume(self):
         if self.volume < 100:
+            self.volume = 50
             self.volume += 1
+            
         else:
             print("O volume já está no máximo!")
 
