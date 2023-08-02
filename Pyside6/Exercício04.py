@@ -33,17 +33,17 @@ class MainWindow(QMainWindow):
         self.input4.setGeometry(100, 130, 80, 30)
 
         self.result_label = QLabel(self)
-        self.result_label.setGeometry(10, 90, 280, 30)
+        self.result_label.setGeometry(10, 90, 80, 30)
 
         self.button = QPushButton("Calcular", self)
         self.button.setGeometry(190, 10, 100, 70)
         self.button.clicked.connect(self.calcular_soma)
 
     def calcular_soma(self):
-        num1 = int(self.input1.text())
-        num2 = int(self.input2.text())
-        num3 = int(self.input3.text())
-        num4 = int(self.input4.text())
+        num1 = float(self.input1.text())
+        num2 = float(self.input2.text())
+        num3 = float(self.input3.text())
+        num4 = float(self.input4.text())
         media = (num1+num2+num3+num4)/4
         self.result_label.setText(f"A soma é: {media}")
 
