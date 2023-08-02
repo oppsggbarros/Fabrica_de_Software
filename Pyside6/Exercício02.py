@@ -19,9 +19,9 @@ class MainWindow(QMainWindow):
     def imprimir(self):
         numero = 4
         if numero % 2 == 0:
-            self.result_label.setText(f"Este número é {numero} par")
+            self.result_label.setText(f"{numero} é par")
         else:
-            self.result_label.setText(f"Este número é {numero} impar")
+            self.result_label.setText(f"{numero} é impar")
 
 app = QApplication(sys.argv)
 janela = MainWindow()
