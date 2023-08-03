@@ -5,14 +5,20 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Área do Círculo")
-        self.setGeometry(100, 100, 300, 150)
+        self.setWindowTitle("Calculo de horas trabalhadas")
+        self.setGeometry(100, 100, 330, 150)
 
-        self.label1 = QLabel("Informe o raio:", self)
+        self.label1 = QLabel("O quanto você\nganha por hora:", self)
         self.label1.setGeometry(5, 10, 90, 30)
 
         self.input1 = QLineEdit(self)
         self.input1.setGeometry(100, 10, 80, 30)
+        
+        self.label2 = QLabel("Quantidade de\nhoras trabalhadas\nno mês:", self)
+        self.label2.setGeometry(5, 50, 90, 40)
+        
+        self.input2 = QLineEdit(self)
+        self.input2.setGeometry(100, 50, 80, 30)
 
         self.result_label = QLabel(self)
         self.result_label.setGeometry(10, 90, 280, 30)
@@ -23,11 +29,10 @@ class MainWindow(QMainWindow):
 
     def calcular_soma(self):
         num1 = int(self.input1.text())
-        if num1 <= 0:
-            self.result_label.setText("Não existe Raio negativo")
-        else:
-            area = num1**2/3
-            self.result_label.setText(f"A área do círculo é {area}")
+        num2 = int(self.input2.text())
+        total = num1*num2
+        self.result_label.setText(f"A quantidade que ele ganhou no mês foi de {total} Reais")
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

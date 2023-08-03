@@ -5,10 +5,10 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Área do Círculo")
+        self.setWindowTitle("Área do Quadrado")
         self.setGeometry(100, 100, 300, 150)
 
-        self.label1 = QLabel("Informe o raio:", self)
+        self.label1 = QLabel("Informe o lado do\nquadrado:", self)
         self.label1.setGeometry(5, 10, 90, 30)
 
         self.input1 = QLineEdit(self)
@@ -24,10 +24,11 @@ class MainWindow(QMainWindow):
     def calcular_soma(self):
         num1 = int(self.input1.text())
         if num1 <= 0:
-            self.result_label.setText("Não existe Raio negativo")
+            self.result_label.setText("Não existe medida negativa")
         else:
-            area = num1**2/3
-            self.result_label.setText(f"A área do círculo é {area}")
+            area = num1**2
+            area2 = area*2
+            self.result_label.setText(f"A área do quadrado é {area} e o dobro é {area2}")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
