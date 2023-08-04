@@ -1,29 +1,56 @@
+from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QFrame
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton
-from PyQt5.QtGui import QPixmap
 
-class MainWindow(QMainWindow):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
-
-        self.setWindowTitle("pikomons")
-        self.setGeometry(100, 100, 300, 150)
-
-        self.result_label = QLabel(self)
-        self.result_label.setGeometry(10, 90, 280, 30)
-
-        self.button_Pokemon1 = QPushButton("Pokemon1", self)
-        self.button_pokemon1.setGeometry(190, 10, 100, 70)
-        self.button_pokemon1.clicked.connect(self.pokemon1)
-
-    def pokemon1(self):
+        self.setFixedSize(800,600)
+        self.initUI()
         
-        self.result_label.setPixmap("imagem.jpg")
+    def initUI(self):
+        self.setWindowTitle("Pokedex")
+        
+        self.button_snivy = QPushButton('Snivy')
+        self.button_bulbasaur = QPushButton('bulbasaur')
+        
+        self.image_frame = QFrame(self)
+        self.image_frame.setFrameShape(QFrame.Box)
+        self.image_frame.setFixedSize(600,400)
+        self.image_frame.setLayout(QVBoxLayout())
+        
+        self.image_label = QLabel(self.image_frame)
+        self.image_label.setAlignment(Qt.AlignCenter)
+        self.image_frame.layout().addWidget(self.image_label)
+        
+        layout = QVBoxLayout()
+        layout.addWidget(self.button_snivy)
+        layout.addWidget(self.button_bulbasaur)
+        layout.addWidget(self.image_frame)
+        
+        self.button_snivy.clicked.connect(self.display_snivy)
+        self.button_bulbasaur.clicked.connect(self.display_bulbasaur)
+        
+        self.setLayout(layout)
+    
+    def display_snivy(self):
+        pixmap = QPixmap('Snivy.jpg')
+        self.image(pixmap)
+    
+    def display_bulbasaur(self):
+        pixmap = QPixmap('bulbasaur.jpg')
+        self.image(pixmap)
+        
+    def image(self, pixmap):
+        scale_pixmap = pixmap.scaled(600,400, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.image_label.setPixmap(scale_pixmap)
+        
+       
+        
+    
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
-    window = MainWindow()
-    window.show()
-
-    sys.exit(app.exec())
+app = QApplication(sys.argv)
+janela = MainWindow()
+janela.show()
+app.exec()
