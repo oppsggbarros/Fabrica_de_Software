@@ -13,6 +13,7 @@ class MainWindow(QMainWindow):
         
         
         
+        
 endereco = brazilcep.get_address_from_cep('79052200')
 print(endereco)
         
