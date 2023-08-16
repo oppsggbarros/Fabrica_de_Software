@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>Snivy.jpg</file>
+    <file>1169197.png</file>
+    <file>blue-document-excel-table.png</file>
+    <file>bulbasaur.jpg</file>
+    <file>hand-finger.png</file>
+  </qresource>
+</RCC>
