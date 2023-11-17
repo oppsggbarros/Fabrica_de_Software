@@ -6,6 +6,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import ScreenManager
+from kivy.uix.popup import Popup
 import mysql.connector
 
 class MyCadastro(Screen):
@@ -68,6 +69,31 @@ class MyCadastro(Screen):
         self.inp_email.text = ""
         self.inp_senha.text = ""
         self.manager.current = 'menu'
+        
+    def ExcluirCadastro(self, instance):
+        cpf_excluir = self.inp_cpf.text
+
+        
+        query_select = "SELECT * FROM tabela_cadastro WHERE cpf = %s"
+        self.cursor.execute(query_select, (cpf_excluir,))
+        user_data = self.cursor.fetchone()
+
+        if user_data:
+            
+            query_delete = "DELETE FROM tabela_cadastro WHERE cpf = %s"
+            self.cursor.execute(query_delete, (cpf_excluir,))
+            self.conn.commit()
+
+            print("Cadastro excluído com sucesso!")
+        else:
+            
+            self.mostrar_mensagem_erro("CPF não encontrado.")
+
+    def mostrar_mensagem_erro(self, mensagem):
+        content = BoxLayout(orientation="vertical")
+        content.add_widget(Label(text=mensagem))
+        popup = Popup(title="Erro", content=content, size_hint=(None, None), size=(400, 200))
+        popup.open()
 
 class MyApp(App):
     def build(self):
