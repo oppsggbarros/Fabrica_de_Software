@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulário</h2>
+    <form action="#" method="post">
+
+        <fieldset id="pessoal">
+            <legend><h3>Dados Pessoais</h3></legend>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+
+            <label for="estado_civil">Estado Civil:</label>
+            <select id="estado_civil" name="estado_civil" required>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divorciado">Divorciado(a)</option>
+                <option value="viuvo">Viúvo(a)</option>
+            </select>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Endereço</h3></legend>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required>
+
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Dados Financeiros</h3></legend>
+            <label for="salario">Salário:</label>
+            <input type="number" id="salario" name="salario" required>
+
+            <label for="conta_bancaria">Conta Bancária:</label>
+            <input type="text" id="conta_bancaria" name="conta_bancaria" required>
+
+            <label for="investimentos">Investimentos:</label>
+            <input type="text" id="investimentos" name="investimentos" required>
+
+            <label for="dividas">Dívidas:</label>
+            <input type="text" id="dividas" name="dividas" required>
+
+            <label for="cartao_credito">Cartão de Crédito:</label>
+            <input type="text" id="cartao_credito" name="cartao_credito" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Dados Comerciais</h3></legend>
+            <label for="empresa">Nome da Empresa:</label>
+            <input type="text" id="empresa" name="empresa" required>
+
+            <label for="cargo">Cargo:</label>
+            <input type="text" id="cargo" name="cargo" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Cadastro Veículo</h3></legend>
+            <label for="modelo_veiculo">Modelo do Veículo:</label>
+            <input type="text" id="modelo_veiculo" name="modelo_veiculo">
+
+            <label for="ano_veiculo">Ano do Veículo:</label>
+            <input type="number" id="ano_veiculo" name="ano_veiculo">
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Cadastro Imóvel</h3></legend>
+            <label for="tipo_imovel">Tipo de Imóvel:</label>
+            <select id="tipo_imovel" name="tipo_imovel">
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="terreno">Terreno</option>
+            </select>
+
+            <label for="endereco_imovel">Endereço do Imóvel:</label>
+            <input type="text" id="endereco_imovel" name="endereco_imovel">
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Dados Cônjuge</h3></legend>
+            <label for="nome_conjuge">Nome do Cônjuge:</label>
+            <input type="text" id="nome_conjuge" name="nome_conjuge">
+
+            <label for="idade_conjuge">Idade do Cônjuge:</label>
+            <input type="number" id="idade_conjuge" name="idade_conjuge">
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Dados Filhos</h3></legend>
+            <label for="qtd_filhos">Quantidade de Filhos:</label>
+            <input type="number" id="qtd_filhos" name="qtd_filhos">
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Dados Formação Escolar</h3></legend>
+            <label for="grau_formacao">Grau de Formação:</label>
+            <select id="grau_formacao" name="grau_formacao">
+                <option value="fundamental">Fundamental</option>
+                <option value="medio">Médio</option>
+                <option value="superior">Superior</option>
+                <option value="pos_graduacao">Pós-Graduação</option>
+            </select>
+
+            <label for="instituicao_formacao">Instituição de Formação:</label>
+            <input type="text" id="instituicao_formacao" name="instituicao_formacao">
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+</html>
+
