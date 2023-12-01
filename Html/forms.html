@@ -4,17 +4,7 @@
     <meta charset="UTF-8">
     <title>Formulário</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            text-align: center;
-        }
-        fieldset {
-            margin-bottom: 20px;
-            padding: 10px;
-        }
+        
         
         
         input, select {
@@ -98,6 +88,15 @@
 
             <label for="cargo">Cargo:</label>
             <input type="text" id="cargo" name="cargo" required>
+
+            <label for="criacao">Ano de Criação:</label>
+            <input type="date" id="date" name="criacao" required>
+
+            <label for="cnpj">CNPJ:</label>
+            <input type="number" id="number" name="cnpj" required>
+
+            <label for="vendas">Vendas</label>
+            <input type="number" id="number" name="vendas" required>
         </fieldset>
 
         <fieldset>
@@ -107,6 +106,9 @@
 
             <label for="ano_veiculo">Ano do Veículo:</label>
             <input type="number" id="ano_veiculo" name="ano_veiculo">
+
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
         </fieldset>
 
         <fieldset>
@@ -120,6 +122,19 @@
 
             <label for="endereco_imovel">Endereço do Imóvel:</label>
             <input type="text" id="endereco_imovel" name="endereco_imovel">
+
+            <label for="banheiro">Quantidade de Banheiros:</label>
+            <input type="number" id="banheiro" name="banheiro" required>
+
+            <label for="Situação">Situação do Imóvel:</label>
+            <select id="situação" name="situação">
+                <option value="Pronto">Pronto pra Morar</option>
+                <option value="construção">Em Construção</option>
+                <option value="Reforma">Precisa de Reforma</option>
+            </select>
+
+            <label for="banheiro">Quantidade de Quartos:</label>
+            <input type="number" id="quartos" name="quartos" required>
         </fieldset>
 
         <fieldset>
@@ -129,6 +144,23 @@
 
             <label for="idade_conjuge">Idade do Cônjuge:</label>
             <input type="number" id="idade_conjuge" name="idade_conjuge">
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+
+            <label for="estado_civil">Estado Civil:</label>
+            <select id="estado_civil" name="estado_civil" required>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divorciado">Divorciado(a)</option>
+                <option value="viuvo">Viúvo(a)</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </fieldset>
 
         <fieldset>
@@ -149,6 +181,15 @@
 
             <label for="instituicao_formacao">Instituição de Formação:</label>
             <input type="text" id="instituicao_formacao" name="instituicao_formacao">
+
+            <label for="conclusão">Ano de Conclusão:</label>
+            <input type="number" id="conclusão" name="concusão" required>
+
+            <label for="curso">Curso/Área de Estudo</label>
+            <input type="text" id="curso" name="curso" required>
+
+            <label for="experiência">Experiência Acadêmica:</label>
+            <input type="text" id="experiência" name="experiência" required>
         </fieldset>
 
         <button type="submit">Enviar</button>
