@@ -1,0 +1,22 @@
+body {
+    background-color: powderblue;
+}
+
+h2 {
+    color:blueviolet;
+    text-align: center;
+}
+
+p {
+    color: red;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color:azure;
+    box-shadow: 10px 10px 8px #888888;
+}
+
