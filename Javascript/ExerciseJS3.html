@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function calcularValor() {
+           
+            let reais = parseFloat(document.getElementById("reais").value);
+            let dolar = parseFloat(document.getElementById("dolar").value);
+            
+            let total = reais / dolar;
+
+
+           
+            alert("Real: " + reais + "\nDolar: " + dolar + "\n Total: " + total);
+        }
+    </script>
+</head>
+<body>
+    
+    
+    <form>
+        <label for="reais">Valor em Reais:</label>
+        <input type="number" id="reais" required><br>
+
+        <label for="dolar">Cotação do dólar:</label>
+        <input type="number" id="dolar" required><br>
+
+        
+
+        <button type="button" onclick="calcularValor()">Calcular</button>
+    </form>
+</body>
+</html>

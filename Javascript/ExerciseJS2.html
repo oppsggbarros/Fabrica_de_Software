@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function calcularValorTotal() {
+           
+            let nomeProduto = document.getElementById("nomeProduto").value;
+            let quantidade = parseInt(document.getElementById("quantidade").value);
+            let valorUnitario = parseFloat(document.getElementById("valorUnitario").value);
+            let percentualDesconto = parseFloat(document.getElementById("percentualDesconto").value);
+
+            
+            let valorTotalSemDesconto = quantidade * valorUnitario;
+            let valorDesconto = (percentualDesconto / 100) * valorTotalSemDesconto;
+            let valorTotalComDesconto = valorTotalSemDesconto - valorDesconto;
+
+           
+            alert("Produto: " + nomeProduto + "\nValor Total com Desconto: R$" + valorTotalComDesconto.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    
+    
+    <form>
+        <label for="nomeProduto">Nome do Produto:</label>
+        <input type="text" id="nomeProduto" required><br>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" required><br>
+
+        <label for="valorUnitario">Valor Unitário:</label>
+        <input type="number" step="0.01" id="valorUnitario" required><br>
+
+        <label for="percentualDesconto">Percentual de Desconto:</label>
+        <input type="number" step="0.01" id="percentualDesconto" required><br>
+
+        <button type="button" onclick="calcularValorTotal()">Calcular</button>
+    </form>
+</body>
+</html>
