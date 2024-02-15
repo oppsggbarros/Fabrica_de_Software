@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function calcularParesEImpares() {
+    let quantidadePares = 0;
+    let quantidadeImpares = 0;
+  
+    
+    for (let i = 1; i <= 10; i++) {
+      let numero = parseInt(prompt("Digite o número " + i + ":"));
+  
+      
+      if (!Number.isNaN(numero)) {
+        
+        if (numero % 2 === 0) {
+          quantidadePares++;
+        } else {
+          quantidadeImpares++;
+        }
+      } else {
+        console.log("Por favor, insira um número inteiro válido.");
+        i--; 
+      }
+    }
+  
+    
+    console.log("Quantidade de números pares: " + quantidadePares);
+    console.log("Quantidade de números ímpares: " + quantidadeImpares);
+  }
+  
+  
+  calcularParesEImpares();
+  
+    </script>
+</body>
+</html>

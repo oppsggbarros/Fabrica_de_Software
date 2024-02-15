@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function simularEleicao() {
+    let numeroDeEleitores = parseInt(prompt("Digite o número total de eleitores:"));
+  
+    
+    if (!Number.isNaN(numeroDeEleitores) && numeroDeEleitores > 0) {
+      
+      let votosCandidato1 = 0;
+      let votosCandidato2 = 0;
+      let votosCandidato3 = 0;
+  
+      
+      for (let i = 1; i <= numeroDeEleitores; i++) {
+        let voto = parseInt(prompt("Eleitor " + i + ": Digite o número do candidato (1, 2 ou 3):"));
+  
+        
+        if (!Number.isNaN(voto) && voto >= 1 && voto <= 3) {
+          
+          if (voto === 1) {
+            votosCandidato1++;
+          } else if (voto === 2) {
+            votosCandidato2++;
+          } else if (voto === 3) {
+            votosCandidato3++;
+          }
+        } else {
+          console.log("Voto inválido. Tente novamente.");
+          i--;
+        }
+      }
+  
+      
+      console.log("Resultado da eleição:");
+      console.log("Candidato 1: " + votosCandidato1 + " votos");
+      console.log("Candidato 2: " + votosCandidato2 + " votos");
+      console.log("Candidato 3: " + votosCandidato3 + " votos");
+  
+     
+      if (votosCandidato1 > votosCandidato2 && votosCandidato1 > votosCandidato3) {
+        console.log("Candidato 1 é o vencedor!");
+      } else if (votosCandidato2 > votosCandidato1 && votosCandidato2 > votosCandidato3) {
+        console.log("Candidato 2 é o vencedor!");
+      } else if (votosCandidato3 > votosCandidato1 && votosCandidato3 > votosCandidato2) {
+        console.log("Candidato 3 é o vencedor!");
+      } else {
+        console.log("A eleição terminou em empate.");
+      }
+  
+    } else {
+      console.log("Por favor, insira um número válido de eleitores.");
+    }
+  }
+  
+  
+  simularEleicao();
+  
+  
+    </script>
+    
+</body>
+</html>

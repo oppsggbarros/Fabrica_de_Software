@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function gerarNumerosNoIntervalo() {
+    
+    let numeroInicial = parseInt(prompt("Digite o número inicial:"));
+    let numeroFinal = parseInt(prompt("Digite o número final:"));
+  
+    
+    if (!Number.isNaN(numeroInicial) && !Number.isNaN(numeroFinal)) {
+      
+      if (numeroInicial <= numeroFinal) {
+        
+        for (let i = numeroInicial; i <= numeroFinal; i++) {
+          console.log(i);
+        }
+      } else {
+        console.log("O número inicial deve ser menor ou igual ao número final.");
+      }
+    } else {
+      console.log("Por favor, insira números inteiros válidos.");
+    }
+  }
+  
+  
+  gerarNumerosNoIntervalo();
+  
+    </script>
+    
+</body>
+</html>

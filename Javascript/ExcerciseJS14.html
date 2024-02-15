@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function calcularSomaEMedia() {
+    let soma = 0;
+  
+    
+    for (let i = 1; i <= 5; i++) {
+      let numero = parseFloat(prompt("Digite o número " + i + ":"));
+  
+      
+      if (!Number.isNaN(numero)) {
+        soma += numero;
+      } else {
+        console.log("Por favor, insira um número válido.");
+        i--; 
+      }
+    }
+  
+    
+    let media = soma / 5;
+    console.log("A soma dos números é: " + soma);
+    console.log("A média dos números é: " + media);
+  }
+  
+  
+  calcularSomaEMedia();
+  
+    </script>
+    
+</body>
+</html>
