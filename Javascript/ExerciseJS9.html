@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Números</title>
+</head>
+<body>
+
+    
+
+    <form id="formulario">
+        <label for="numero1">Número 1:</label>
+        <input type="number" id="numero1" name="numero1" required>
+        <br>
+        <label for="numero2">Número 2:</label>
+        <input type="number" id="numero2" name="numero2" required>
+        <br>
+        <label for="numero3">Número 3:</label>
+        <input type="number" id="numero3" name="numero3" required>
+        <br>
+        <button type="button" onclick="ordenarNumeros()">Ordenar Números</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function ordenarNumeros() {
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+            const numero3 = parseFloat(document.getElementById("numero3").value);
+
+            const numeros = [numero1, numero2, numero3];
+
+            const crescente = [...numeros].sort((a, b) => a - b);
+
+            const decrescente = [...numeros].sort((a, b) => b - a);
+
+        
+            document.getElementById("resultado").innerHTML = `
+                <p>Números em ordem crescente: ${crescente.join(', ')}</p>
+                <p>Números em ordem decrescente: ${decrescente.join(', ')}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+    <script>
+        function calcularReajuste() {
+            let salarioAtual = parseFloat(prompt("Digite o salário atual do colaborador: "));
+
+            if (isNaN(salarioAtual)) {
+                alert("Por favor, digite um valor numérico válido.");
+                return;
+            }
+
+            let percentualAumento, valorAumento, novoSalario;
+
+            if (salarioAtual <= 280) {
+                percentualAumento = 20;
+            } else if (salarioAtual <= 700) {
+                percentualAumento = 15;
+            } else if (salarioAtual <= 1500) {
+                percentualAumento = 10;
+            } else {
+                percentualAumento = 5;
+            }
+
+            valorAumento = (salarioAtual * percentualAumento) / 100;
+            novoSalario = salarioAtual + valorAumento;
+
+            alert("Salário antes do reajuste: R$" + salarioAtual.toFixed(2) +
+                  "\nPercentual de aumento aplicado: " + percentualAumento + "%" +
+                  "\nValor do aumento: R$" + valorAumento.toFixed(2) +
+                  "\nNovo salário após o aumento: R$" + novoSalario.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularReajuste()">Calcular Reajuste</button>
+</body>
+</html>

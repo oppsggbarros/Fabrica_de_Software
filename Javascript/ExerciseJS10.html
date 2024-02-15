@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação conforme o Turno</title>
+    <script>
+        function saudacao() {
+            let turno = prompt("Em que turno você trabalha? (M - Matutino, V - Vespertino, N - Noturno): ");
+
+            if (turno) {
+                turno = turno.toUpperCase();
+
+                if (turno === 'M') {
+                    alert("Bom dia!");
+                } else if (turno === 'V') {
+                    alert("Boa tarde!");
+                } else if (turno === 'N') {
+                    alert("Boa noite!");
+                } else {
+                    alert("Turno inválido. Por favor, digite M, V ou N.");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="saudacao()">Verificar Saudação</button>
+</body>
+</html>

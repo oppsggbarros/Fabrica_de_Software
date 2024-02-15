@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Reajuste Salarial</title>
+</head>
+<body>
+
+    <h1>Poggers</h1>
+
+    <form id="formulario">
+        <label for="salarioAtual">Salário Atual (R$):</label>
+        <input type="number" id="salarioAtual" name="salarioAtual" required>
+        <br>
+        <button type="button" onclick="calcularReajuste()">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularReajuste() {
+            const salarioAtual = parseFloat(document.getElementById("salarioAtual").value);
+
+            let novoSalario;
+
+                if (salarioAtual < 500) {
+                    novoSalario = salarioAtual * 1.15;
+                } else if (salarioAtual >= 500 && salarioAtual <= 1000) {
+                    novoSalario = salarioAtual * 1.10;
+                } else {
+                    novoSalario = salarioAtual * 1.05;
+                }
+
+            document.getElementById("resultado").innerHTML = `
+                <p>Salário atual: R$${salarioAtual.toFixed(2)}</p>
+                <p>Novo salário reajustado: R$${novoSalario.toFixed(2)}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
