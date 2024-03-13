@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h1>Quiz </h1>
+        <div id="question-container">
+            <p id="question"></p>
+            <ul id="options"></ul>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        var questions = [
+            {
+                question: "Quem descobriu o Brasil?",
+                options: ["Pedro Alvarez Cabral", "Napoleão Bonaparte", "Vinicius"],
+                correctAnswer: "Pedro Alvarez Cabral",
+                isCorrect: false
+            },
+            {
+                question: "Qual é a capital do Brasil?",
+                options: ["São Paulo", "Rio de Janeiro", "Brasília"],
+                correctAnswer: "Brasília",
+                isCorrect: false
+            },
+            {
+                question: "Qual é a Capital de Roraima?",
+                options: ["Rio Branco", "Porto Velho", "Boa Vista"],
+                correctAnswer: "Boa Vista",
+                isCorrect: false
+            },
+            {
+                question: "Quem é o mais Viado do Senac?",
+                options: ["Pontes", "Vinicius", "Felipe", "Christian", "Gleisson"],
+                correctAnswer: "Pontes",
+                isCorrect: false
+
+            }
+
+        ];
+
+        var currentQuestionIndex = 0;
+
+        function displayQuestion() {
+            var questionContainer = document.getElementById('question-container');
+            var questionText = document.getElementById('question');
+            var optionsList = document.getElementById('options');
+            var result = document.getElementById('result');
+
+            questionText.textContent = questions[currentQuestionIndex].question;
+
+
+            optionsList.innerHTML = '';
+
+
+            questions[currentQuestionIndex].options.forEach(function (option, index) {
+                var li = document.createElement('li');
+                li.textContent = option;
+                li.setAttribute('onclick', 'checkAnswer(this)');
+                optionsList.appendChild(li);
+            });
+
+
+            result.textContent = '';
+        }
+
+        function checkAnswer(option) {
+            var result = document.getElementById('result');
+
+            if (option.innerText.includes(questions[currentQuestionIndex].correctAnswer)) {
+                questions[currentQuestionIndex].isCorrect = true;
+                result.innerText = 'Resposta correta!';
+                result.style.color = 'green';
+            } else {
+                questions[currentQuestionIndex].isCorrect = false;
+                result.innerText = 'Resposta incorreta. Tente novamente.';
+                result.style.color = 'red';
+            }
+
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                displayResults();
+            }
+        }
+
+        function displayResults() {
+            var result = document.getElementById('result');
+            result.innerHTML = '<h2>Resultado Final:</h2>';
+
+            questions.forEach(function (question, index) {
+                result.innerHTML += `<p>Pergunta ${index + 1}: ${question.isCorrect ? 'Correta' : 'Incorreta'}</p>`;
+            });
+        }
+
+
+        displayQuestion();
+
+    </script>
+</body>
+
+</html>
